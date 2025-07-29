@@ -1,0 +1,7 @@
+.Main {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  padding-inline: 40px;
+  flex-direction: column;
+}

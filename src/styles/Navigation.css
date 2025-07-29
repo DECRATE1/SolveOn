@@ -1,0 +1,39 @@
+.Navigation {
+  width: 100%;
+  list-style-type: none;
+  margin-top: 20px;
+  font-family: var(--font-ad);
+  font-size: 20px;
+  line-height: 100%;
+  font-weight: 400;
+  display: flex;
+}
+
+.Navigation ul {
+  display: flex;
+  gap: 28px;
+  text-transform: uppercase;
+}
+
+.Navigation ul a {
+  text-decoration: none;
+  color: black;
+  user-select: none;
+}
+
+.Navigation ul span {
+  user-select: none;
+}
+
+.extra {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 9px;
+}
+
+.registerContainer {
+  display: flex;
+  margin-left: auto;
+  gap: 16px;
+}

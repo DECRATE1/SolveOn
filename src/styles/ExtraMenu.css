@@ -1,0 +1,25 @@
+.ExtraMenu {
+  background-color: rgba(239, 239, 239, 0.6);
+  backdrop-filter: 30px;
+  width: 329px;
+  height: 312px;
+  border-radius: 20px;
+  padding-block: 16px;
+  padding-inline: 20px;
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  gap: 4px;
+  top: 33px;
+  position: absolute;
+  z-index: 100;
+}
+
+.ExtraMenu a {
+  font-family: var(--font-ad);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  width: 100%;
+  user-select: none;
+}

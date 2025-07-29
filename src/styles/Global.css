@@ -1,0 +1,29 @@
+@import "../styles/Fonts.css";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-ad: "Comfortaa", sans-serif;
+  --font-maintext: "Zrniccyr", sans-serif;
+}
+
+#root {
+  width: 100%;
+}
+
+body {
+  max-width: 1920px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}

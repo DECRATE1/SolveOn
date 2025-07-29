@@ -1,0 +1,23 @@
+.AdvertisementUnderHeader {
+  width: 100%;
+  z-index: 0;
+  font-family: var(--font-ad);
+  display: flex;
+  font-size: 20px;
+  line-height: 100%;
+  margin-bottom: 14px;
+}
+.advertisementList {
+  display: flex;
+  gap: 92px;
+}
+.advertisementListContainer {
+  display: flex;
+  gap: 3px;
+}
+.advertisementPraice {
+  display: flex;
+  flex-direction: column;
+  width: 663px;
+  margin-left: auto;
+}

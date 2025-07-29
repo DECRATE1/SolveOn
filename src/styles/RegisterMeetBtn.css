@@ -1,0 +1,11 @@
+.RegisterMeetBtn {
+  color: white;
+  border-radius: 60px;
+  width: 170px;
+  height: 46px;
+  background: rgba(43, 101, 246, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+}

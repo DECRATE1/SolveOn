@@ -1,0 +1,7 @@
+.Countdown {
+  display: flex;
+}
+
+.countdown-item-first {
+  margin-right: 4px;
+}
