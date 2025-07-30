@@ -1,0 +1,17 @@
+.ReadAboutPopularServise {
+  width: 56px;
+  height: 29px;
+  background-color: #060606;
+  border-radius: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3px;
+}
+
+.ReadAboutPopularServise span {
+  width: 4px;
+  height: 4px;
+  background-color: white;
+  border-radius: 60px;
+}

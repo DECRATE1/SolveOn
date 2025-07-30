@@ -1,0 +1,36 @@
+.TopPopularServicesCard {
+  height: 404px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 40px;
+  transition-property: all;
+}
+
+.titleService {
+  font-family: var(--font-maintext);
+  font-weight: 400;
+  font-size: 60px;
+  max-width: 423px;
+  margin-top: 42px;
+}
+
+.topPopularServicesCardImage {
+  border-radius: 180px;
+  margin-top: 21px;
+}
+
+.desServise {
+  max-width: 400px;
+  font-family: var(--font-ad);
+  margin-top: 42px;
+  height: auto;
+  display: -webkit-box;
+  -webkit-line-clamp: 6; /* Ограничение в 3 строки */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1em;
+  max-height: calc(1em * 6);
+  font-size: 20px;
+}

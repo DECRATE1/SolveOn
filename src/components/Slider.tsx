@@ -1,40 +1,58 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/Slider.css";
+import { SliderData } from "../data/SliderData";
+import Slide from "./Slide";
+import SliderDots from "./SliderDots";
 export default function Slider() {
   const [currSlide, setCurrSlide] = useState(0);
-  const [slides, setSlides] = useState(["blue", "yellow", "green"]);
-
+  useEffect(() => {
+    const interval = setInterval(() => setCurrSlide((currSlide + 1) % 3), 5000);
+    return () => clearInterval(interval);
+  }, [currSlide]);
   return (
     <div className="Slider">
-      <div
-        style={{
-          background: "red",
-          width: "20px",
-          height: "20px",
-          position: "absolute",
-        }}
-        onClick={() => {
-          setCurrSlide(currSlide + 1 > 3 ? 0 : currSlide + 1);
-          console.log(currSlide);
-        }}
-      >
-        a
-      </div>
-      {slides.map(() => {
-        return (
-          <div
-            style={{
-              background: `${slides[currSlide]}`,
-              width: "100%",
-              height: "100%",
-              transform: `translateX((${currSlide * 10})%)`,
-              transitionProperty: "all",
-              transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)",
-              transitionDuration: "150ms",
-            }}
-          ></div>
-        );
+      {SliderData.map((slide, index) => {
+        if (index === currSlide) {
+          return (
+            <Slide
+              src={slide.src}
+              alt={slide.alt}
+              key={index + slide.alt}
+              transform={0}
+              sign="+"
+              slideToShowLink={1}
+              index={index}
+            ></Slide>
+          );
+        } else if (index < currSlide) {
+          return (
+            <Slide
+              src={slide.src}
+              alt={slide.alt}
+              key={index + slide.alt}
+              transform={100}
+              sign="-"
+              index={index}
+            ></Slide>
+          );
+        } else {
+          return (
+            <Slide
+              src={slide.src}
+              alt={slide.alt}
+              key={index + slide.alt}
+              transform={100}
+              sign="+"
+              index={index}
+            ></Slide>
+          );
+        }
       })}
+
+      <SliderDots
+        indexOfActiveSlide={currSlide}
+        setCurrSlide={setCurrSlide}
+      ></SliderDots>
     </div>
   );
 }

@@ -1,6 +1,25 @@
 .Hero {
   width: 100%;
-  height: 424px;
-  background-color: red;
+  height: calc(424 / 1440 * 100vw);
   overflow: hidden;
+  margin-bottom: 160px;
+  position: relative;
+  font-family: var(--font-ad);
+  font-size: 20px;
+  line-height: 100%;
+  font-weight: 700;
+}
+
+.Hero .additional {
+  position: absolute;
+  bottom: calc(4vh + 16px);
+  right: 3vh;
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+  gap: 20px;
+  text-decoration: underline;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
 }

@@ -1,0 +1,28 @@
+.MoreServicesBtn {
+  width: 152px;
+  height: 38px;
+  background-color: rgba(43, 101, 246, 1);
+  font-family: var(--font-maintext);
+  text-transform: lowercase;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 40px;
+  gap: 5.27px;
+}
+
+.MoreServicesBtn .text {
+  color: white;
+  font-size: 20px;
+  margin-left: 14.93px;
+}
+
+.roundedArrow {
+  background-color: white;
+  width: 32.03px;
+  height: 32.03px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 60px;
+}

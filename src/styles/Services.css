@@ -1,0 +1,15 @@
+.Services {
+  width: 100%;
+  font-family: var(--font-ad);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.popularServices {
+  display: flex;
+  gap: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+}

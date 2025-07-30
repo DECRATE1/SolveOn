@@ -1,0 +1,44 @@
+.Slide {
+  width: 100%;
+  height: 100%;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+  position: absolute;
+
+  user-select: none;
+}
+.Slide img {
+  pointer-events: none;
+}
+.slideImage {
+  width: 100%;
+  height: 100%;
+}
+
+.bigArrowHero {
+  width: calc(140 / 1440 * 75vw);
+  height: auto;
+  transform: translateX(0);
+  transition: transform 200ms ease-in-out;
+}
+.slideAdditional {
+  position: absolute;
+  right: calc(210 / 1440 * 100vw);
+  bottom: calc(100 / 1440 * 100vw);
+  display: flex;
+  flex-direction: column;
+}
+
+.slideAdditional span {
+  position: absolute;
+  bottom: -2vh;
+  left: -6vh;
+  text-transform: lowercase;
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.slideAdditional:hover .bigArrowHero {
+  transform: translateY(-20px);
+}
