@@ -1,4 +1,5 @@
 import "../styles/TopPopularServicesCard.css";
+
 export default function TopPopularServicesCard({
   lowerHeight,
 }: {
@@ -6,27 +7,37 @@ export default function TopPopularServicesCard({
 }) {
   return (
     <div
-      className="TopPopularServicesCard"
+      className="service-card"
       style={{
         opacity: lowerHeight ? 1 : 0,
         transition: "opacity 20s ease",
       }}
     >
-      <span className="titleService">Лазерная коррекция зрения</span>
-      <div>
+      <h3 className="service-card__title">Лазерная коррекция зрения</h3>
+      <div className="service-card__image-container">
         <img
-          className="topPopularServicesCardImage"
+          className="service-card__image"
           src="/slide2.jpg"
           width={361}
           height={361}
-        ></img>
+          alt="Laser eye correction illustration"
+        />
+        <a href="#" className="service-card__more-link">
+          <img
+            src="/HeroArrow.svg"
+            className="service-card__arrow-icon"
+            alt=""
+            aria-hidden="true"
+          />
+          <span className="service-card__more-text">подробнее</span>
+        </a>
       </div>
-      <span className="desServise">
+      <p className="service-card__description">
         После лазерной коррекции зрение становится лучше за счет того, что лазер
         создает новую форму роговицы — «естественной линзы» нашего глаза,
         вследствие чего она начинает по-другому преломлять световые лучи, они
         фокусируются на сетчатке и изображение становится четким.
-      </span>
+      </p>
     </div>
   );
 }

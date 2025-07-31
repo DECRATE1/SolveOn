@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "../styles/Timer.css";
+
 export default function Timer() {
   const [timeLeft, setTimeLeft] = useState({
     days: 3,
@@ -49,22 +50,28 @@ export default function Timer() {
     return () => clearInterval(timer);
   }, []);
 
-  const format = (num: number) => num.toString().padStart(2, "0");
+  const formatTime = (num: number) => num.toString().padStart(2, "0");
 
   return (
-    <div className="Countdown">
-      <div className="countdown-item-first">
-        <span>{timeLeft.days} дня</span>
+    <div className="timer">
+      <div className="timer__item timer__item--days">
+        <span className="timer__value">{timeLeft.days} дня </span>
       </div>
 
-      <div className="countdown-item">
-        <span> {format(timeLeft.hours)}:</span>
+      <div className="timer__item timer__item--hours">
+        <span className="timer__value">{formatTime(timeLeft.hours)}</span>
       </div>
-      <div className="countdown-item">
-        <span>{format(timeLeft.minutes)}:</span>
+
+      <div className="timer__separator">:</div>
+
+      <div className="timer__item timer__item--minutes">
+        <span className="timer__value">{formatTime(timeLeft.minutes)}</span>
       </div>
-      <div className="countdown-item-last">
-        <span>{format(timeLeft.seconds)}</span>
+
+      <div className="timer__separator">:</div>
+
+      <div className="timer__item timer__item--seconds">
+        <span className="timer__value">{formatTime(timeLeft.seconds)}</span>
       </div>
     </div>
   );

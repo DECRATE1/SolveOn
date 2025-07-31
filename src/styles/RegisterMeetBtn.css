@@ -1,4 +1,4 @@
-.RegisterMeetBtn {
+.register-btn {
   color: white;
   border-radius: 60px;
   width: 170px;
@@ -8,4 +8,28 @@
   align-items: center;
   justify-content: center;
   user-select: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+  transition: background-color 0.2s ease;
+}
+
+.register-btn:hover {
+  background: rgba(35, 85, 210, 1);
+}
+
+.register-btn:focus {
+  outline: 2px solid rgba(43, 101, 246, 0.5);
+  outline-offset: 2px;
+}
+
+.register-btn:active {
+  transform: scale(0.98);
+}
+
+.register-btn:disabled {
+  background: rgba(43, 101, 246, 0.5);
+  cursor: not-allowed;
 }

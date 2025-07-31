@@ -1,43 +1,56 @@
-import "../styles/Navigation.css";
-import { headerList } from "../data/HeaderList";
 import { useRef, useState } from "react";
+import { headerList } from "../data/HeaderList";
 import ExtraMenu from "./ExtraMenu";
 import RegisterMeetBtn from "./RegisterMeetBtn";
 import ProfileBtn from "./ProfileBtn";
+import { useDispatch } from "react-redux";
+import { openPopUp } from "../store/PopUpSlice";
+import "../styles/Navigation.css";
 
 export default function Navigation() {
-  const [extraMenuIsHidden, setExtraMenuIsHidden] = useState(true);
-  const extraBtn = useRef<HTMLSpanElement>(null);
+  const dispatch = useDispatch();
+  const [isExtraMenuVisible, setIsExtraMenuVisible] = useState(false);
+  const extraBtnRef = useRef<HTMLDivElement>(null);
+
   return (
-    <div className="Navigation">
-      <ul>
-        {headerList.map((val, index) => {
-          return index === headerList.length - 1 ? (
-            <div className="extra" key={index}>
-              <span
-                onClick={() => setExtraMenuIsHidden(!extraMenuIsHidden)}
-                ref={extraBtn}
-              >
-                {val.text}
-              </span>
-              {!extraMenuIsHidden && (
-                <ExtraMenu
-                  setExtraMenuIsHidden={setExtraMenuIsHidden}
-                  extraBtnRef={extraBtn}
-                ></ExtraMenu>
-              )}
-            </div>
-          ) : (
-            <a href={val.href} key={index}>
-              {val.text}
-            </a>
-          );
-        })}
+    <nav className="nav">
+      <ul className="nav__list">
+        {headerList.map((item, index) => (
+          <li className="nav__item" key={index}>
+            {index === headerList.length - 1 ? (
+              <div className="nav__extra">
+                <div
+                  className="nav__extra-btn"
+                  onClick={() => setIsExtraMenuVisible(!isExtraMenuVisible)}
+                  ref={extraBtnRef}
+                  aria-expanded={isExtraMenuVisible}
+                  aria-haspopup="true"
+                >
+                  {item.text}
+                </div>
+                {isExtraMenuVisible && (
+                  <ExtraMenu
+                    setExtraMenuIsVisible={setIsExtraMenuVisible}
+                    extraBtnRef={extraBtnRef}
+                  />
+                )}
+              </div>
+            ) : (
+              <a href={item.href} className="nav__link">
+                {item.text}
+              </a>
+            )}
+          </li>
+        ))}
       </ul>
-      <div className="registerContainer">
-        <RegisterMeetBtn></RegisterMeetBtn>
-        <ProfileBtn></ProfileBtn>
+
+      <div className="nav__actions">
+        <RegisterMeetBtn
+          className="nav__register-btn"
+          onClick={() => dispatch(openPopUp())}
+        />
+        <ProfileBtn />
       </div>
-    </div>
+    </nav>
   );
 }

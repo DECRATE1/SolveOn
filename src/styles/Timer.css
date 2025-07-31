@@ -1,7 +1,15 @@
-.Countdown {
+.timer {
   display: flex;
+  align-items: center;
+  font-family: var(--font-ad);
 }
 
-.countdown-item-first {
-  margin-right: 4px;
+.timer__item {
+  display: flex;
+  justify-content: center;
+}
+
+.timer__value {
+  font-size: 20px;
+  color: rgba(253, 254, 255, 1);
 }

@@ -1,4 +1,5 @@
-.MoreServicesBtn {
+/* EXACT same styles as original, just renamed classes */
+.more-services-btn {
   width: 152px;
   height: 38px;
   background-color: rgba(43, 101, 246, 1);
@@ -9,15 +10,18 @@
   align-items: center;
   border-radius: 40px;
   gap: 5.27px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
-.MoreServicesBtn .text {
+.more-services-btn__text {
   color: white;
   font-size: 20px;
   margin-left: 14.93px;
+  font-family: var(--font-maintext);
 }
 
-.roundedArrow {
+.more-services-btn__arrow {
   background-color: white;
   width: 32.03px;
   height: 32.03px;
@@ -25,4 +29,17 @@
   justify-content: center;
   align-items: center;
   border-radius: 60px;
+  transition: transform 0.3s ease;
+}
+
+.more-services-btn__arrow-icon {
+  display: block;
+}
+
+.more-services-btn:hover {
+  background-color: rgba(35, 85, 210, 1);
+}
+
+.more-services-btn:hover .more-services-btn__arrow {
+  transform: translateX(2px);
 }

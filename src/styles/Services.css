@@ -1,15 +1,31 @@
-.Services {
+.services {
   width: 100%;
-  font-family: var(--font-ad);
+  font-family: var(--font-maintext);
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 15px;
 }
 
-.popularServices {
+.services__header {
   display: flex;
   gap: 8px;
+  align-items: center;
+}
+
+.services__indicator {
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 60px;
+  background-color: black;
+}
+
+.services__title {
+  font-size: 24px;
+  line-height: 100%;
   font-weight: 700;
   text-transform: uppercase;
+  margin: 0;
+  font-size: inherit;
 }

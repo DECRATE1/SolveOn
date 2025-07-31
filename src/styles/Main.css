@@ -1,7 +1,7 @@
-.Main {
+.main {
+  width: 100%;
   display: flex;
   justify-items: center;
   align-items: center;
-  padding-inline: 40px;
   flex-direction: column;
 }

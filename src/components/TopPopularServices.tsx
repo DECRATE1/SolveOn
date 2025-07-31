@@ -1,19 +1,23 @@
-import "../styles/TopPopularServices.css";
 import { Services } from "../data/ServicesData";
+import { useState } from "react";
+import "../styles/TopPopularServices.css";
 import TopPopularServiceItem from "./TomPopularServiceItem";
 
 export default function TopPopularServices() {
+  const [itemOpen, setItemOpen] = useState<null | number>(null);
+
   return (
-    <div className="TopPopularServices">
-      {Services.map((service, index) => {
-        return (
-          <TopPopularServiceItem
-            title={service.title}
-            index={index}
-            description={service.description}
-          />
-        );
-      })}
+    <div className="popular-services">
+      {Services.map((service, index) => (
+        <TopPopularServiceItem
+          key={index}
+          title={service.title}
+          description={service.description}
+          index={index}
+          itemOpen={itemOpen}
+          setItemOpen={setItemOpen}
+        />
+      ))}
     </div>
   );
 }

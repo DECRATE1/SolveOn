@@ -3,56 +3,43 @@ import "../styles/Slider.css";
 import { SliderData } from "../data/SliderData";
 import Slide from "./Slide";
 import SliderDots from "./SliderDots";
+
 export default function Slider() {
-  const [currSlide, setCurrSlide] = useState(0);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
   useEffect(() => {
-    const interval = setInterval(() => setCurrSlide((currSlide + 1) % 3), 5000);
+    const interval = setInterval(
+      () => setCurrentSlide((prev) => (prev + 1) % SliderData.length),
+      5000
+    );
     return () => clearInterval(interval);
-  }, [currSlide]);
+  }, [currentSlide]);
+
+  const renderSlide = (slide: (typeof SliderData)[0], index: number) => {
+    const isActive = index === currentSlide;
+    const isPrev = index < currentSlide;
+
+    return (
+      <Slide
+        src={slide.src}
+        alt={slide.alt}
+        key={`${index}-${slide.alt}`}
+        transform={isActive ? 0 : 100}
+        sign={isActive || isPrev ? "-" : "+"}
+        slideToShowLink={isActive ? 1 : undefined}
+        index={index}
+      />
+    );
+  };
+
   return (
-    <div className="Slider">
-      {SliderData.map((slide, index) => {
-        if (index === currSlide) {
-          return (
-            <Slide
-              src={slide.src}
-              alt={slide.alt}
-              key={index + slide.alt}
-              transform={0}
-              sign="+"
-              slideToShowLink={1}
-              index={index}
-            ></Slide>
-          );
-        } else if (index < currSlide) {
-          return (
-            <Slide
-              src={slide.src}
-              alt={slide.alt}
-              key={index + slide.alt}
-              transform={100}
-              sign="-"
-              index={index}
-            ></Slide>
-          );
-        } else {
-          return (
-            <Slide
-              src={slide.src}
-              alt={slide.alt}
-              key={index + slide.alt}
-              transform={100}
-              sign="+"
-              index={index}
-            ></Slide>
-          );
-        }
-      })}
+    <div className="slider">
+      <div className="slider__track">{SliderData.map(renderSlide)}</div>
 
       <SliderDots
-        indexOfActiveSlide={currSlide}
-        setCurrSlide={setCurrSlide}
-      ></SliderDots>
+        indexOfActiveSlide={currentSlide}
+        setCurrSlide={setCurrentSlide}
+      />
     </div>
   );
 }

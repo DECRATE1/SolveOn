@@ -1,0 +1,100 @@
+.popup {
+  position: fixed;
+  width: 871px;
+  height: 420px;
+  background-color: rgba(253, 254, 255, 0.6);
+  backdrop-filter: blur(30px);
+  padding: 44px 48px;
+  border-radius: 40px;
+  z-index: 1001;
+  background-image: url("/phoropter.png");
+  background-repeat: no-repeat;
+  background-size: 75%;
+  background-position: 250%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+}
+
+.popup__close-btn {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 0;
+  right: 64px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.popup__close-icon {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.popup__content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.popup__title {
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.popup__subtitle {
+  max-width: 510px;
+  margin: 0;
+}
+
+.popup__form {
+  display: flex;
+  flex-direction: column;
+}
+
+.popup__input-group {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 2px;
+}
+
+.popup__input {
+  flex: 1;
+}
+
+.popup__privacy {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 40px;
+}
+
+.popup__privacy-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.popup__checkbox {
+  border-radius: 60px;
+}
+
+.popup__privacy-text {
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration-skip-ink: "true";
+}
+
+.popup__privacy-link {
+  text-decoration: underline;
+}
+
+.popup__privacy-link:hover {
+  color: rgba(43, 101, 246, 1);
+}

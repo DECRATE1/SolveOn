@@ -4,10 +4,10 @@ import Title from "./Title";
 import Navigation from "./Navigation";
 export default function Header() {
   return (
-    <div className="Header">
+    <header className="header">
       <AdvertisementBanner></AdvertisementBanner>
       <Title></Title>
       <Navigation></Navigation>
-    </div>
+    </header>
   );
 }

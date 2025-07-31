@@ -1,43 +1,44 @@
 import { useEffect, useRef } from "react";
 import { ExtraList } from "../data/ExtraList";
 import "../styles/ExtraMenu.css";
+
 export default function ExtraMenu({
-  setExtraMenuIsHidden,
+  setExtraMenuIsVisible,
   extraBtnRef,
 }: {
-  setExtraMenuIsHidden: (val: boolean) => void;
+  setExtraMenuIsVisible: (val: boolean) => void;
   extraBtnRef: React.RefObject<HTMLSpanElement | null>;
 }) {
   const menuRef = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
-    if (window) {
-      window.addEventListener("click", (e) => {
-        if (menuRef.current && extraBtnRef.current) {
-          if (
-            !menuRef.current.contains(e.target as HTMLDivElement) &&
-            !extraBtnRef.current.contains(e.target as HTMLDivElement)
-          ) {
-            setExtraMenuIsHidden(true);
-          }
+    const handleClickOutside = (e: MouseEvent) => {
+      if (menuRef.current && extraBtnRef.current) {
+        if (
+          !menuRef.current.contains(e.target as Node) &&
+          !extraBtnRef.current.contains(e.target as Node)
+        ) {
+          setExtraMenuIsVisible(false);
         }
-      });
-    }
+      }
+    };
+
+    window.addEventListener("click", handleClickOutside);
+
+    return () => {
+      window.removeEventListener("click", handleClickOutside);
+    };
   }, []);
 
   return (
-    <div className="ExtraMenu" ref={menuRef}>
-      {ExtraList.map((val, index) => {
-        return (
-          <div
-            style={{ width: "100%", height: "36px", paddingBlock: "8px" }}
-            key={index}
-          >
-            <a href={val.href} key={index}>
-              {val.text}
-            </a>
-          </div>
-        );
-      })}
+    <div className="extra-menu" ref={menuRef}>
+      {ExtraList.map((val, index) => (
+        <div className="extra-menu__item" key={index}>
+          <a href={val.href} className="extra-menu__link">
+            {val.text}
+          </a>
+        </div>
+      ))}
     </div>
   );
 }

@@ -1,38 +1,51 @@
 import "../styles/TopPopularServicesBar.css";
 import ReadAboutPopularServise from "./ReadAboutPopularServise";
 
-export default function TopPopularServicesBar({
-  title,
-  description,
-  index,
-  lowerHeight,
-  setLowerHeight,
-}: {
+interface TopPopularServicesBarProps {
   title: string;
   description: string;
   index: number;
   lowerHeight: boolean;
   setLowerHeight: (val: boolean) => void;
-}) {
+  itemOpen: number | null;
+  setItemOpen: (val: number) => void;
+}
+
+export default function TopPopularServicesBar({
+  title,
+  index,
+  lowerHeight,
+  setLowerHeight,
+  itemOpen,
+  setItemOpen,
+}: TopPopularServicesBarProps) {
   return (
     <>
-      <span className="line"></span>
+      <span className="services-bar__line"></span>
       <div
-        className="TopPopularServicesBar"
+        className="services-bar"
         style={{
-          transform: lowerHeight ? "scaleY(0)" : "",
-          height: lowerHeight ? "0" : "",
+          transform: lowerHeight && itemOpen === index ? "scaleY(0)" : "",
+          height: lowerHeight && itemOpen === index ? "0" : "",
         }}
       >
-        <span className="roundedNum">{index + 1}</span>
-        <div className="serviseTitle">
-          <img src="/slide1.jpg" width={92} height={92}></img>
-          <span>{title}</span>
-        </div>
+        <span className="services-bar__number">{index + 1}</span>
+        <h4 className="services-bar__title">
+          <img
+            src="/slide1.jpg"
+            width={92}
+            height={92}
+            alt=""
+            className="services-bar__image"
+          />
+          <span className="services-bar__title-text">{title}</span>
+        </h4>
 
         <ReadAboutPopularServise
           setLowerHeight={setLowerHeight}
-        ></ReadAboutPopularServise>
+          setItemOpen={setItemOpen}
+          index={index}
+        />
       </div>
     </>
   );

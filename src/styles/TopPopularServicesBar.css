@@ -1,5 +1,4 @@
-.TopPopularServicesBar {
-  background: #ffffff;
+.services-bar {
   background: linear-gradient(
     0deg,
     rgba(255, 255, 255, 1) 0%,
@@ -7,18 +6,24 @@
   );
   width: 100%;
   height: 110px;
-
   display: flex;
   align-items: center;
   padding-inline: 40px;
   justify-content: space-between;
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 700ms;
+  transition-duration: 5ms;
   transform-origin: top;
 }
 
-.roundedNum {
+.services-bar__line {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-top: 2px solid #06060633;
+}
+
+.services-bar__number {
   width: 38px;
   height: 38px;
   font-family: var(--font-ad);
@@ -32,27 +37,22 @@
   font-weight: 400;
 }
 
-.serviseTitle {
+.services-bar__title {
   display: flex;
   gap: 29px;
   font-family: var(--font-maintext);
   height: 100%;
   justify-content: center;
   align-items: center;
+  margin: 0;
 }
-.serviseTitle img {
+
+.services-bar__image {
   border-radius: 60px;
 }
 
-.serviseTitle span {
+.services-bar__title-text {
   font-weight: 400;
   font-size: 32px;
   line-height: 100%;
-}
-
-.line {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-top: 2px solid #06060633;
 }

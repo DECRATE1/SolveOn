@@ -1,11 +1,12 @@
 import "../styles/Slide.css";
+
 export default function Slide({
   src,
-  alt,
   transform,
   sign,
   slideToShowLink,
   index,
+  alt,
 }: {
   src: string;
   alt: string;
@@ -14,34 +15,30 @@ export default function Slide({
   slideToShowLink?: number;
   index: number;
 }) {
+  const isActive = slideToShowLink! - 1 === index;
+
   return (
     <div
-      className="Slide"
+      className="slide"
       style={{
         transform: `translateX(${sign}${transform}%)`,
         visibility: transform === 0 ? "visible" : "hidden",
       }}
     >
-      <img className="slideImage" src={`/${src}`} alt={alt}></img>
-      {slideToShowLink! - 1 === index ? (
-        <a className="slideAdditional" href="#">
-          <img className="bigArrowHero" src="/HeroArrow.svg"></img>
-          <span>Подробнее</span>
-        </a>
-      ) : (
-        <a
-          className="slideAdditional"
-          style={{
-            opacity: 0,
-            transition: " opacity 500ms ease-in-out",
-            userSelect: "none",
-            pointerEvents: "none",
-          }}
-        >
-          <img className="bigArrowHero" src="/HeroArrow.svg"></img>
-          <span>Подробнее</span>
-        </a>
-      )}
+      <div
+        className="slide__image"
+        style={{ backgroundImage: `url(/${src})` }}
+        role="img"
+        aria-label={alt}
+      ></div>
+
+      <a
+        className={`slide__link ${!isActive ? "slide__link--hidden" : ""}`}
+        href={isActive ? "#" : undefined}
+      >
+        <img className="slide__arrow" src="/HeroArrow.svg" alt="Arrow icon" />
+        <span className="slide__link-text">Подробнее</span>
+      </a>
     </div>
   );
 }
