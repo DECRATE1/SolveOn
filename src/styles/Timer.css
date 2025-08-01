@@ -2,14 +2,75 @@
   display: flex;
   align-items: center;
   font-family: var(--font-ad);
+  gap: 8px;
 }
 
 .timer__item {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .timer__value {
   font-size: 20px;
   color: rgba(253, 254, 255, 1);
+  line-height: 1;
+}
+
+.timer__label {
+  font-size: 12px;
+  color: rgba(253, 254, 255, 0.7);
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .timer__value {
+    font-size: 18px;
+  }
+
+  .timer__label {
+    font-size: 11px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .timer {
+    gap: 6px;
+  }
+
+  .timer__value {
+    font-size: 16px;
+  }
+
+  .timer__label {
+    font-size: 10px;
+    margin-top: 3px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .timer {
+    gap: 6px;
+  }
+
+  .timer__value {
+    font-size: 16px;
+  }
+
+  .timer__label {
+    font-size: 10px;
+    margin-top: 3px;
+  }
+}
+
+@media (max-width: 320px) {
+  .timer__value {
+    font-size: 12px;
+  }
+
+  .timer__label {
+    font-size: 8px;
+  }
 }

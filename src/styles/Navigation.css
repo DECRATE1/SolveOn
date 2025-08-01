@@ -61,3 +61,88 @@
 .nav__profile-btn {
   cursor: pointer;
 }
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .nav {
+    font-size: 20px;
+    margin-top: 20px;
+  }
+
+  .nav__list {
+    gap: 20px;
+  }
+
+  .nav__actions {
+    gap: 8px;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .nav {
+    font-size: 16px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+
+  .nav__list {
+    display: none;
+  }
+
+  .nav__actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0;
+    order: 1;
+    gap: 12px;
+  }
+
+  .nav__extra {
+    gap: 7px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .nav {
+    font-size: 14px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+
+  .nav__list {
+    display: none;
+  }
+
+  .nav__actions {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0;
+    order: 1;
+    gap: 12px;
+  }
+
+  .nav__extra {
+    gap: 7px;
+  }
+}
+
+@media (max-width: 320px) {
+  .nav {
+    font-size: 12px;
+  }
+
+  .nav__list {
+    gap: 8px;
+  }
+
+  .nav__actions {
+    gap: 8px;
+  }
+
+  .nav__link,
+  .nav__extra-btn {
+    white-space: nowrap;
+  }
+}

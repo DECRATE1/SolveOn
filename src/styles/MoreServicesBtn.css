@@ -1,4 +1,3 @@
-/* EXACT same styles as original, just renamed classes */
 .more-services-btn {
   width: 152px;
   height: 38px;
@@ -42,4 +41,75 @@
 
 .more-services-btn:hover .more-services-btn__arrow {
   transform: translateX(2px);
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .more-services-btn {
+    width: 140px;
+    height: 36px;
+  }
+
+  .more-services-btn__text {
+    font-size: 18px;
+    margin-left: 12px;
+  }
+
+  .more-services-btn__arrow {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .more-services-btn {
+    width: 130px;
+    height: 34px;
+    gap: 4px;
+  }
+
+  .more-services-btn__text {
+    font-size: 16px;
+    margin-left: 10px;
+  }
+
+  .more-services-btn__arrow {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .more-services-btn {
+    width: 130px;
+    height: 40px;
+    gap: 4px;
+  }
+
+  .more-services-btn__text {
+    font-size: 16px;
+    margin-left: 10px;
+  }
+
+  .more-services-btn__arrow {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+@media (max-width: 320px) {
+  .more-services-btn {
+    width: 110px;
+    height: 30px;
+    gap: 3px;
+  }
+
+  .more-services-btn__text {
+    font-size: 14px;
+    margin-left: 6px;
+  }
+
+  .more-services-btn__arrow {
+    width: 22px;
+    height: 22px;
+  }
 }

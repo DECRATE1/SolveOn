@@ -14,6 +14,7 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 5ms;
   transform-origin: top;
+  position: relative;
 }
 
 .services-bar__line {
@@ -35,6 +36,7 @@
   font-size: 20px;
   line-height: 100%;
   font-weight: 400;
+  flex-shrink: 0;
 }
 
 .services-bar__title {
@@ -48,11 +50,117 @@
 }
 
 .services-bar__image {
-  border-radius: 60px;
+  border-radius: 180px;
+  width: 92px;
+  height: 92px;
+  object-fit: cover;
 }
 
 .services-bar__title-text {
   font-weight: 400;
   font-size: 32px;
   line-height: 100%;
+  white-space: nowrap;
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .services-bar {
+    height: 90px;
+    padding-inline: 32px;
+  }
+
+  .services-bar__title-text {
+    font-size: 24px;
+  }
+
+  .services-bar__title {
+    gap: 20px;
+  }
+
+  .services-bar__image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .services-bar__number {
+    width: 34px;
+    height: 34px;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .services-bar {
+    height: 80px;
+    padding-inline: 24px;
+  }
+
+  .services-bar__title-text {
+    font-size: 20px;
+    white-space: normal;
+  }
+
+  .services-bar__title {
+    gap: 16px;
+  }
+
+  .services-bar__image {
+    width: 38px;
+    height: 38px;
+  }
+
+  .services-bar__number {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .services-bar {
+    width: 100%;
+    height: 80px;
+    padding-inline: 24px;
+  }
+
+  .services-bar__title-text {
+    font-size: 20px;
+    white-space: normal;
+    font-family: var(--font-maintext);
+  }
+
+  .services-bar__title {
+    gap: 20px;
+  }
+
+  .services-bar__image {
+    width: 70px;
+    height: 70px;
+  }
+
+  .services-bar__number {
+    width: 21px;
+    height: 21px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 320px) {
+  .services-bar {
+    height: 60px;
+    padding-inline: 12px;
+  }
+
+  .services-bar__title-text {
+    font-size: 16px;
+  }
+
+  .services-bar__title {
+    gap: 8px;
+  }
+
+  .services-bar__image {
+    width: 28px;
+    height: 28px;
+  }
 }

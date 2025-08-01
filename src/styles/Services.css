@@ -27,5 +27,68 @@
   font-weight: 700;
   text-transform: uppercase;
   margin: 0;
-  font-size: inherit;
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .services {
+    margin-bottom: 12px;
+  }
+
+  .services__title {
+    font-size: 22px;
+  }
+
+  .services__indicator {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .services {
+    margin-bottom: 10px;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .services__title {
+    font-size: 20px;
+  }
+
+  .services__indicator {
+    width: 13px;
+    height: 13px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .services {
+    margin-bottom: 10px;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .services__title {
+    font-size: 20px;
+  }
+
+  .services__indicator {
+    width: 13px;
+    height: 13px;
+  }
+}
+
+@media (max-width: 320px) {
+  .services__title {
+    font-size: 16px;
+  }
+
+  .services__indicator {
+    width: 11px;
+    height: 11px;
+  }
+
+  .services__header {
+    gap: 5px;
+  }
 }

@@ -5,6 +5,11 @@
   justify-content: space-between;
   padding-inline: 40px;
   transition-property: all;
+  position: relative;
+}
+
+.servise-card-table {
+  display: none;
 }
 
 .service-card__title {
@@ -14,15 +19,20 @@
   max-width: 423px;
   margin-top: 42px;
   margin-bottom: 0;
+  line-height: 1.1;
 }
 
 .service-card__image-container {
   position: relative;
+  align-self: flex-start;
 }
 
 .service-card__image {
   border-radius: 180px;
   margin-top: 21px;
+  width: 361px;
+  height: 361px;
+  object-fit: cover;
 }
 
 .service-card__description {
@@ -35,8 +45,8 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-height: 1em;
-  max-height: calc(1em * 6);
+  line-height: 1.4em;
+  max-height: calc(1.4em * 6);
   font-size: 20px;
   margin-bottom: 0;
 }
@@ -56,13 +66,244 @@
   flex-direction: column;
   text-decoration: none;
   font-family: var(--font-maintext);
+  transition: transform 0.3s ease;
 }
 
 .service-card__arrow-icon {
   width: 36px;
   height: 36px;
+  transition: transform 0.3s ease;
 }
 
 .service-card__more-text {
   margin-top: 8px;
+  font-size: 16px;
+}
+
+.service-card__more-link:hover {
+  transform: scale(1.05);
+}
+
+.service-card__more-link:hover .service-card__arrow-icon {
+  transform: translateX(5px);
+}
+
+.service-card-mobile {
+  display: none;
+}
+.service-card-mobile-container {
+  display: none;
+}
+.service-card-mobile__image-container {
+  display: none;
+}
+.service-card-mobile__description {
+  display: none;
+}
+.service-card-mobile__title {
+  display: none;
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .service-card {
+    width: 100%;
+    padding-inline: 32px;
+    align-items: flex-start;
+  }
+
+  .service-card__title {
+    display: none;
+  }
+
+  .servise-card-table {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    height: 100%;
+    margin-top: 32px;
+  }
+
+  .service-card-table__title {
+    width: 366px;
+    height: 102px;
+  }
+
+  .service-card-table__description {
+    width: fit-content;
+    font-family: var(--font-ad);
+    font-size: 18px;
+  }
+
+  .service-card__image-container {
+    order: 1;
+    width: fit-content;
+    margin-top: 24px;
+    margin-right: 1em;
+  }
+
+  .service-card__image {
+    width: 300px;
+    height: 300px;
+  }
+
+  .service-card__description {
+    display: none;
+  }
+
+  .service-card__more-link {
+    width: 100px;
+    height: 100px;
+  }
+
+  .service-card__arrow-icon {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .service-card {
+    width: 100%;
+    padding-inline: 32px;
+    align-items: flex-start;
+    height: fit-content;
+    padding-bottom: 24px;
+  }
+
+  .service-card__title {
+    display: none;
+  }
+
+  .servise-card-table {
+    display: flex;
+    flex-direction: column;
+    width: 450px;
+    height: 100%;
+    margin-top: 32px;
+  }
+
+  .service-card-table__title {
+    width: 366px;
+    height: 102px;
+    font-size: 44px;
+  }
+
+  .service-card-table__description {
+    width: 328px;
+    font-family: var(--font-ad);
+    font-size: 16px;
+  }
+
+  .service-card__image-container {
+    order: 1;
+    width: fit-content;
+    margin-top: 24px;
+    margin-right: 1em;
+  }
+
+  .service-card__image {
+    width: 239px;
+    height: 239px;
+  }
+
+  .service-card__description {
+    display: none;
+  }
+
+  .service-card__more-link {
+    width: 80px;
+    height: 80px;
+  }
+
+  .service-card__arrow-icon {
+    width: 22.5px;
+    height: 22.5px;
+  }
+
+  .service-card__more-text {
+    font-size: 12px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .service-card {
+    width: 100%;
+    padding-inline: 24px;
+    align-items: flex-start;
+    height: fit-content;
+    padding-bottom: 24px;
+  }
+
+  .service-card-mobile {
+    width: 100%;
+  }
+  .service-card-mobile-container {
+    display: flex;
+    width: 100%;
+  }
+  .service-card-mobile__image-container {
+    position: relative;
+    margin-left: auto;
+  }
+  .service-card-mobile__description {
+    font-weight: 14px;
+  }
+  .service-card-mobile__title {
+    max-width: 261px;
+    width: 100%;
+    position: absolute;
+  }
+
+  .service-card__title {
+    display: none;
+  }
+
+  .servise-card-table {
+    display: none;
+  }
+
+  .service-card-table__title {
+    display: none;
+  }
+
+  .service-card-table__description {
+    display: none;
+  }
+
+  .service-card__image-container {
+    display: none;
+  }
+
+  .service-card__image {
+    width: 320px;
+    height: 320px;
+  }
+
+  .service-card__description {
+    display: none;
+  }
+
+  .service-card__more-link {
+    width: 80px;
+    height: 80px;
+  }
+
+  .service-card__arrow-icon {
+    width: 22.5px;
+    height: 22.5px;
+  }
+
+  .service-card__more-text {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 320px) {
+  .service-card__title {
+    font-size: 28px;
+  }
+
+  .service-card__description {
+    font-size: 14px;
+  }
 }

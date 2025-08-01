@@ -1,5 +1,3 @@
-import "../styles/Slide.css";
-
 export default function Slide({
   src,
   transform,
@@ -28,7 +26,6 @@ export default function Slide({
       <div
         className="slide__image"
         style={{ backgroundImage: `url(/${src})` }}
-        role="img"
         aria-label={alt}
       ></div>
 

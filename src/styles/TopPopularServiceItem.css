@@ -3,4 +3,46 @@
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 700ms;
   transform-origin: top;
+  position: relative;
+  will-change: transform, opacity;
+}
+
+.popular-service-item:hover {
+  transform: scale(1.03);
+  z-index: 10;
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .popular-service-item {
+    transition-duration: 500ms;
+  }
+
+  .popular-service-item:hover {
+    transform: scale(1.02);
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .popular-service-item {
+    transition-duration: 400ms;
+  }
+
+  .popular-service-item:hover {
+    transform: scale(1.01);
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .popular-service-item {
+    transition-duration: 400ms;
+  }
+
+  .popular-service-item:hover {
+    transform: scale(1.01);
+  }
+}
+
+.popular-service-item:focus {
+  outline: 2px solid rgba(43, 101, 246, 0.5);
+  outline-offset: 2px;
 }

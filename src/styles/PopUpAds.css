@@ -2,7 +2,7 @@
   position: fixed;
   width: 871px;
   height: 420px;
-  background-color: rgba(253, 254, 255, 0.6);
+  background-color: rgba(253, 254, 255, 1);
   backdrop-filter: blur(30px);
   padding: 44px 48px;
   border-radius: 40px;
@@ -21,12 +21,13 @@
   width: 32px;
   height: 32px;
   position: absolute;
-  top: 0;
-  right: 64px;
+  top: 32px;
+  right: 32px;
   cursor: pointer;
   background: none;
   border: none;
   padding: 0;
+  scale: 2.5;
 }
 
 .popup__close-icon {
@@ -97,4 +98,118 @@
 
 .popup__privacy-link:hover {
   color: rgba(43, 101, 246, 1);
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .popup {
+    width: 750px;
+    height: 396px;
+    padding: 44px 40px;
+    background-size: 80%;
+    background-position: 300%;
+  }
+
+  .popup__close-btn {
+    right: 48px;
+  }
+
+  .popup__title {
+    font-size: 40px;
+  }
+
+  .popup__subtitle {
+    font-size: 28px;
+    max-width: 467px;
+  }
+
+  .popip__input {
+    width: 266px;
+  }
+
+  .popup__input-group {
+    gap: 16px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .popup {
+    width: 90%;
+    height: auto;
+    min-height: 400px;
+    padding: 32px;
+    background-size: 50%;
+    background-position: 150% bottom;
+  }
+
+  .popup__close-btn {
+    right: 32px;
+    top: 16px;
+  }
+
+  .popup__content {
+    gap: 8px;
+  }
+
+  .popup__input-group {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .popup__subtitle {
+    max-width: 100%;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .popup {
+    width: 90%;
+    height: auto;
+    min-height: 400px;
+    padding: 32px;
+    background-size: 50%;
+    background-position: 150% bottom;
+  }
+
+  .popup__close-btn {
+    right: 32px;
+    top: 16px;
+  }
+
+  .popup__content {
+    gap: 8px;
+  }
+
+  .popup__input-group {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .popup__subtitle {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 320px) {
+  .popup {
+    padding: 20px 16px;
+    border-radius: 16px;
+    background-image: none;
+  }
+
+  .popup__title {
+    font-size: 18px;
+  }
+
+  .popup__subtitle {
+    font-size: 14px;
+  }
+
+  .popup__privacy-label {
+    gap: 6px;
+  }
+
+  .popup__checkbox {
+    width: 16px;
+    height: 16px;
+  }
 }

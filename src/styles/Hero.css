@@ -25,3 +25,62 @@
   transition: all 500ms cubic-bezier(0.4, 0, 0.2, 1);
   color: inherit;
 }
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .hero {
+    height: 420px;
+    margin-bottom: 120px;
+    font-size: 18px;
+  }
+
+  .hero__additional-links {
+    gap: 18px;
+    bottom: 14px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .hero {
+    height: 311px;
+    margin-bottom: 80px;
+    font-size: 16px;
+  }
+
+  .hero__additional-links {
+    gap: 16px;
+    bottom: 12px;
+    right: 8px;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .hero {
+    height: 284px;
+    margin-bottom: 80px;
+    font-size: 14px;
+  }
+
+  .hero__additional-links {
+    gap: 16px;
+    bottom: 12px;
+    right: 8px;
+  }
+}
+
+@media (max-width: 320px) {
+  .hero {
+    height: 240px;
+    margin-bottom: 40px;
+    font-size: 12px;
+  }
+
+  .hero__additional-links {
+    gap: 8px;
+    bottom: 8px;
+    right: 16px;
+  }
+
+  .hero__additional-link {
+    text-decoration: none;
+  }
+}

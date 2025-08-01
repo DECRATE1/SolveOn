@@ -1,5 +1,5 @@
 import { SliderData } from "../data/SliderData";
-import "../styles/SliderDots.css";
+
 export default function SliderDots({
   indexOfActiveSlide,
   setCurrSlide,
@@ -8,7 +8,7 @@ export default function SliderDots({
   setCurrSlide: (val: number) => void;
 }) {
   return (
-    <div className="SliderDots">
+    <div className="slider__dots">
       {SliderData.map((_, index) => {
         return (
           <span

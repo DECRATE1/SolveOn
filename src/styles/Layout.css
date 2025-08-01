@@ -24,3 +24,39 @@
   background-color: rgba(0, 0, 0, 0.9);
   z-index: 1000;
 }
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .layout {
+    padding-inline: 32px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .layout {
+    padding-inline: 24px;
+  }
+
+  .layout__main--blurred {
+    filter: blur(0.75px);
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .layout {
+    padding-inline: 16px;
+  }
+
+  .layout__main--blurred {
+    filter: blur(0.5px);
+  }
+}
+
+@media (max-width: 320px) {
+  .layout {
+    padding-inline: 12px;
+  }
+
+  .layout__main--blurred {
+    filter: blur(0.25px);
+  }
+}
