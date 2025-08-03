@@ -1,13 +1,17 @@
-import { useRef, useState } from "react";
+import { lazy, useRef, useState } from "react";
 import { headerList } from "../data/HeaderList";
-import ExtraMenu from "./ExtraMenu";
-import RegisterMeetBtn from "./RegisterMeetBtn";
-import ProfileBtn from "./ProfileBtn";
+const ExtraMenu = lazy(() => import("./ExtraMenu"));
+const RegisterMeetBtn = lazy(() => import("./RegisterMeetBtn"));
+const ProfileBtn = lazy(() => import("./ProfileBtn"));
 import { useDispatch } from "react-redux";
 import { openPopUp } from "../store/PopUpSlice";
 import "../styles/Navigation.css";
-
-export default function Navigation() {
+import { IoMenuSharp } from "react-icons/io5";
+export default function Navigation({
+  setMobileMenuIsOpen,
+}: {
+  setMobileMenuIsOpen: (val: boolean) => void;
+}) {
   const dispatch = useDispatch();
   const [isExtraMenuVisible, setIsExtraMenuVisible] = useState(false);
   const extraBtnRef = useRef<HTMLDivElement>(null);
@@ -28,6 +32,7 @@ export default function Navigation() {
                 >
                   {item.text}
                 </div>
+
                 {isExtraMenuVisible && (
                   <ExtraMenu
                     setExtraMenuIsVisible={setIsExtraMenuVisible}
@@ -50,6 +55,10 @@ export default function Navigation() {
           onClick={() => dispatch(openPopUp())}
         />
         <ProfileBtn />
+        <IoMenuSharp
+          className="mobile-menu__btn"
+          onClick={() => setMobileMenuIsOpen(true)}
+        ></IoMenuSharp>
       </div>
     </nav>
   );

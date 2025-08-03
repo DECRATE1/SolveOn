@@ -12,13 +12,13 @@ export default function SliderDots({
       {SliderData.map((_, index) => {
         return (
           <span
+            className="slider__dots-dot"
             key={index}
             style={{
               borderRadius: "60px",
               border: "1px solid",
               borderColor: "black",
-              width: "12px",
-              height: "12px",
+
               backgroundColor:
                 indexOfActiveSlide === index ? "black" : "inherit",
             }}

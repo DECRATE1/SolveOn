@@ -1,8 +1,12 @@
-import AdvertisementUnderHeader from "../components/AdvertisementUnderHeader";
-import Hero from "../components/Hero";
-import Services from "../components/Services";
-import TopPopularServices from "../components/TopPopularServices";
-
+import { lazy } from "react";
+const AdvertisementUnderHeader = lazy(
+  () => import("../components/AdvertisementUnderHeader")
+);
+const Hero = lazy(() => import("../components/Hero"));
+const Services = lazy(() => import("../components/Services"));
+const TopPopularServices = lazy(
+  () => import("../components/TopPopularServices")
+);
 export default function MainPage() {
   return (
     <>

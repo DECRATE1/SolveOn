@@ -61,11 +61,8 @@
 .popup__input-group {
   display: flex;
   gap: 32px;
+  height: fit-content;
   margin-bottom: 2px;
-}
-
-.popup__input {
-  flex: 1;
 }
 
 .popup__privacy {
@@ -99,8 +96,13 @@
 .popup__privacy-link:hover {
   color: rgba(43, 101, 246, 1);
 }
+.register__btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
-@media (min-width: 1024px) and (max-width: 1440px) {
+@media (min-width: 1024px) and (max-width: 1439px) {
   .popup {
     width: 750px;
     height: 396px;
@@ -131,7 +133,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .popup {
     width: 90%;
     height: auto;
@@ -160,7 +162,7 @@
   }
 }
 
-@media (min-width: 576px) and (max-width: 768px) {
+@media (min-width: 576px) and (max-width: 767px) {
   .popup {
     width: 90%;
     height: auto;
@@ -189,27 +191,52 @@
   }
 }
 
-@media (max-width: 320px) {
+@media (min-width: 320px) and (max-width: 575px) {
   .popup {
-    padding: 20px 16px;
-    border-radius: 16px;
-    background-image: none;
+    width: 90%;
+    height: auto;
+    min-height: 400px;
+    padding: 16px;
+    background-size: 110%;
+    background-position: -600% center;
   }
 
   .popup__title {
-    font-size: 18px;
+    font-size: 24px;
   }
 
   .popup__subtitle {
-    font-size: 14px;
+    font-size: 16px;
   }
 
-  .popup__privacy-label {
-    gap: 6px;
+  .popup__privacy-text {
+    font-size: 12px;
+    width: fit-content;
+  }
+
+  .popup__close-btn {
+    right: 32px;
+    top: 16px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .popup__content {
+    gap: 8px;
+  }
+
+  .popup__input-group {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .popup__subtitle {
+    max-width: 100%;
   }
 
   .popup__checkbox {
-    width: 16px;
-    height: 16px;
+    width: 40px;
+    height: 40px;
+    flex-wrap: nowrap;
   }
 }

@@ -61,8 +61,16 @@
 .nav__profile-btn {
   cursor: pointer;
 }
-
-@media (min-width: 1024px) and (max-width: 1440px) {
+.mobile-menu__btn {
+  display: none;
+  cursor: pointer;
+  background-color: black;
+  width: 20px;
+  height: 20px;
+  padding: 3px;
+  border-radius: 60px;
+}
+@media (min-width: 1024px) and (max-width: 1439px) {
   .nav {
     font-size: 20px;
     margin-top: 20px;
@@ -76,9 +84,13 @@
     gap: 8px;
     font-size: 18px;
   }
+
+  .mobile-menu__btn {
+    display: none;
+  }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .nav {
     font-size: 16px;
     margin-top: 16px;
@@ -89,6 +101,12 @@
     display: none;
   }
 
+  .mobile-menu__btn {
+    display: block;
+    scale: 1.5;
+    fill: white;
+  }
+
   .nav__actions {
     width: 100%;
     display: flex;
@@ -103,11 +121,17 @@
   }
 }
 
-@media (min-width: 576px) and (max-width: 768px) {
+@media (min-width: 576px) and (max-width: 767px) {
   .nav {
     font-size: 14px;
     margin-top: 16px;
     flex-wrap: wrap;
+  }
+
+  .mobile-menu__btn {
+    display: block;
+    scale: 1.5;
+    fill: white;
   }
 
   .nav__list {
@@ -128,21 +152,33 @@
   }
 }
 
-@media (max-width: 320px) {
+@media (min-width: 320px) and (max-width: 574px) {
   .nav {
-    font-size: 12px;
+    font-size: 14px;
+    margin-top: 16px;
+    flex-wrap: wrap;
   }
 
   .nav__list {
-    gap: 8px;
+    display: none;
+  }
+
+  .mobile-menu__btn {
+    display: block;
+    scale: 1.5;
+    fill: white;
   }
 
   .nav__actions {
-    gap: 8px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 0;
+    order: 1;
+    gap: 12px;
   }
 
-  .nav__link,
-  .nav__extra-btn {
-    white-space: nowrap;
+  .nav__extra {
+    gap: 7px;
   }
 }

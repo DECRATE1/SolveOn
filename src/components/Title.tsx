@@ -7,7 +7,12 @@ export default function Title() {
         <h1 className="title__main-text">Центр</h1>
         <h2 className="title__secondary-text">лазерной медицины</h2>
       </div>
-      <img className="title__icon" src="/eye.svg" alt="Eye icon" />
+      <img
+        className="title__icon"
+        src="/eye.svg"
+        alt="Eye icon"
+        loading="lazy"
+      />
     </div>
   );
 }

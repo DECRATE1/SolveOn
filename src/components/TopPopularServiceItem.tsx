@@ -1,7 +1,9 @@
-import { useState } from "react";
-import TopPopularServicesBar from "./TopPopularServicesBar";
-import TopPopularServicesCard from "./TopPopularServicesCard";
+import { lazy, useState } from "react";
+
 import "../styles/TopPopularServiceItem.css";
+import TopPopularServicesCard from "./TopPopularServicesCard";
+
+const TopPopularServicesBar = lazy(() => import("./TopPopularServicesBar"));
 
 interface TopPopularServiceItemProps {
   title: string;
@@ -9,6 +11,7 @@ interface TopPopularServiceItemProps {
   index: number;
   itemOpen: number | null;
   setItemOpen: (val: number) => void;
+  src: string;
 }
 
 export default function TopPopularServiceItem({
@@ -16,6 +19,7 @@ export default function TopPopularServiceItem({
   description,
   index,
   itemOpen,
+  src,
   setItemOpen,
 }: TopPopularServiceItemProps) {
   const [lowerHeight, setLowerHeight] = useState(false);
@@ -32,7 +36,12 @@ export default function TopPopularServiceItem({
         itemOpen={itemOpen}
       />
       {lowerHeight && itemOpen === index && (
-        <TopPopularServicesCard lowerHeight={lowerHeight} />
+        <TopPopularServicesCard
+          lowerHeight={lowerHeight}
+          description={description}
+          src={src}
+          title={title}
+        />
       )}
     </div>
   );

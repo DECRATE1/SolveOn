@@ -12,7 +12,7 @@
   z-index: 10;
 }
 
-@media (min-width: 1024px) and (max-width: 1440px) {
+@media (min-width: 1024px) and (max-width: 1439px) {
   .popular-service-item {
     transition-duration: 500ms;
   }
@@ -22,7 +22,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .popular-service-item {
     transition-duration: 400ms;
   }
@@ -32,7 +32,7 @@
   }
 }
 
-@media (min-width: 576px) and (max-width: 768px) {
+@media (min-width: 576px) and (max-width: 767px) {
   .popular-service-item {
     transition-duration: 400ms;
   }

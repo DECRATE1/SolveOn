@@ -25,7 +25,7 @@
   margin-top: 4px;
 }
 
-@media (min-width: 1024px) and (max-width: 1440px) {
+@media (min-width: 1024px) and (max-width: 1439px) {
   .timer__value {
     font-size: 18px;
   }
@@ -35,7 +35,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .timer {
     gap: 6px;
   }
@@ -50,7 +50,7 @@
   }
 }
 
-@media (min-width: 576px) and (max-width: 768px) {
+@media (min-width: 576px) and (max-width: 767px) {
   .timer {
     gap: 6px;
   }
@@ -65,12 +65,18 @@
   }
 }
 
-@media (max-width: 320px) {
+@media (min-width: 320px) and (max-width: 575px) {
+  .timer {
+    gap: 6px;
+    display: none;
+  }
+
   .timer__value {
-    font-size: 12px;
+    font-size: 16px;
   }
 
   .timer__label {
-    font-size: 8px;
+    font-size: 10px;
+    margin-top: 3px;
   }
 }

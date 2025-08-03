@@ -122,6 +122,7 @@ h6 {
 :root {
   --font-ad: "Comfortaa", sans-serif;
   --font-maintext: "Zrniccyr", sans-serif;
+  --font-inter: "Inter", sans-serif;
 }
 
 #root {
@@ -154,7 +155,7 @@ a {
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   h1 {
     font-size: 170px;
   }
@@ -191,7 +192,7 @@ a {
   }
 }
 
-@media (min-width: 576px) and (max-width: 768px) {
+@media (min-width: 576px) and (max-width: 767px) {
   h1 {
     font-size: 140px;
   }
@@ -222,28 +223,40 @@ a {
   }
 }
 
-@media (max-width: 320px) {
+@media (min-width: 320px) and (max-width: 575px) {
   h1 {
-    font-size: 60px;
+    font-size: 90px;
   }
   h2 {
-    font-size: 32px;
-  }
-  h3 {
-    font-size: 28px;
-  }
-  h4 {
     font-size: 24px;
   }
+  h3 {
+    font-size: 24px;
+  }
+  h4 {
+    font-size: 16px;
+  }
   h5 {
-    font-size: 18px;
+    font-size: 12px;
   }
 
   input[type="text"],
   input[type="tel"] {
-    height: 40px;
-    font-size: 13px;
-    border-radius: 12px;
+    width: 220px;
+    height: 44px;
+    font-size: 14px;
+    padding-block: 14px;
+    padding-left: 16px;
+    border-radius: 16px;
+  }
+
+  input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+  }
+
+  input[type="checkbox"]:checked::before {
+    font-size: 12px;
   }
 }
 

@@ -8,12 +8,13 @@ export default function RegisterMeetBtn({
   className?: string;
 }) {
   return (
-    <div
+    <button
+      type="submit"
       className={`register-btn ${className}`}
       onClick={onClick}
       aria-label="Записаться на прием"
     >
       записаться
-    </div>
+    </button>
   );
 }

@@ -6,10 +6,11 @@ export default function MoreServicesBtn() {
       <span className="more-services-btn__text">Больше услуг</span>
       <span className="more-services-btn__arrow">
         <img
+          loading="lazy"
           src="/HeroArrow.svg"
           width={14}
           height={14}
-          alt=""
+          alt="Arrow"
           className="more-services-btn__arrow-icon"
         />
       </span>

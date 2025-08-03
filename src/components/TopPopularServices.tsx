@@ -1,7 +1,8 @@
 import { Services } from "../data/ServicesData";
-import { useState } from "react";
+import { lazy, useState } from "react";
 import "../styles/TopPopularServices.css";
-import TopPopularServiceItem from "./TomPopularServiceItem";
+
+const TopPopularServiceItem = lazy(() => import("./TopPopularServiceItem"));
 
 export default function TopPopularServices() {
   const [itemOpen, setItemOpen] = useState<null | number>(null);
@@ -10,6 +11,7 @@ export default function TopPopularServices() {
     <div className="popular-services">
       {Services.map((service, index) => (
         <TopPopularServiceItem
+          src={service.src}
           key={index}
           title={service.title}
           description={service.description}

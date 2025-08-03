@@ -1,5 +1,6 @@
+import { lazy } from "react";
 import "../styles/AdBanner.css";
-import Timer from "./Timer";
+const Timer = lazy(() => import("./Timer"));
 
 export default function AdvertisementBanner() {
   return (
@@ -10,8 +11,13 @@ export default function AdvertisementBanner() {
           Скидка на Лазерную коррекцию до 60 %
         </span>
         <Timer />
-        <a href="#" className="ad-banner__link">
-          <img src="/Group 646.svg" className="ad-banner__icon" alt="Акция" />
+        <a href="/newPage?hello=Никита" className="ad-banner__link">
+          <img
+            loading="lazy"
+            src="/Group 646.svg"
+            className="ad-banner__icon"
+            alt="Акция"
+          />
         </a>
       </div>
     </div>

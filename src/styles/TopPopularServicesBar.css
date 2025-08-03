@@ -63,7 +63,7 @@
   white-space: nowrap;
 }
 
-@media (min-width: 1024px) and (max-width: 1440px) {
+@media (min-width: 1024px) and (max-width: 1439px) {
   .services-bar {
     height: 90px;
     padding-inline: 32px;
@@ -89,7 +89,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .services-bar {
     height: 80px;
     padding-inline: 24px;
@@ -116,7 +116,7 @@
   }
 }
 
-@media (min-width: 576px) and (max-width: 768px) {
+@media (min-width: 576px) and (max-width: 767px) {
   .services-bar {
     width: 100%;
     height: 80px;
@@ -145,22 +145,30 @@
   }
 }
 
-@media (max-width: 320px) {
+@media (min-width: 320px) and (max-width: 575px) {
   .services-bar {
-    height: 60px;
-    padding-inline: 12px;
+    width: 100%;
+    height: 80px;
+    padding-inline: 16px;
   }
 
   .services-bar__title-text {
-    font-size: 16px;
+    font-size: 20px;
+    white-space: normal;
+    font-family: var(--font-maintext);
   }
 
   .services-bar__title {
-    gap: 8px;
+    gap: 20px;
   }
 
   .services-bar__image {
-    width: 28px;
-    height: 28px;
+    display: none;
+  }
+
+  .services-bar__number {
+    width: 21px;
+    height: 21px;
+    font-size: 14px;
   }
 }

@@ -26,7 +26,7 @@ export const headerList: { text: string; haveMenu: boolean; href: string }[] = [
   },
   {
     text: "еще:",
-    haveMenu: false,
+    haveMenu: true,
     href: "#",
   },
 ];

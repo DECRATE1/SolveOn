@@ -1,13 +1,18 @@
-import AdvertisementBanner from "./AdvertisementBanner";
+import { lazy } from "react";
+const AdvertisementBanner = lazy(() => import("./AdvertisementBanner"));
+const Navigation = lazy(() => import("./Navigation"));
+const Title = lazy(() => import("./Title"));
 import "../styles/Header.css";
-import Title from "./Title";
-import Navigation from "./Navigation";
-export default function Header() {
+export default function Header({
+  setMobileMenuIsOpen,
+}: {
+  setMobileMenuIsOpen: (val: boolean) => void;
+}) {
   return (
     <header className="header">
       <AdvertisementBanner></AdvertisementBanner>
       <Title></Title>
-      <Navigation></Navigation>
+      <Navigation setMobileMenuIsOpen={setMobileMenuIsOpen}></Navigation>
     </header>
   );
 }

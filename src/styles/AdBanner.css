@@ -34,14 +34,14 @@
   right: 0;
 }
 
-@media (min-width: 1024px) and (max-width: 1440px) {
+@media (min-width: 1024px) and (max-width: 1439px) {
   .ad-banner__container {
     gap: 24px;
     font-size: 18px;
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1023px) {
   .ad-banner__container {
     gap: 16px;
     font-size: 16px;
@@ -53,9 +53,9 @@
   }
 }
 
-@media (min-width: 576px) and (max-width: 768px) {
+@media (min-width: 576px) and (max-width: 767px) {
   .ad-banner__container {
-    gap: 16px;
+    gap: 14px;
     font-size: 16px;
     height: 50px;
   }
@@ -65,16 +65,14 @@
   }
 }
 
-@media (max-width: 320px) {
+@media (min-width: 320px) and (max-width: 575px) {
   .ad-banner__container {
-    gap: 8px;
+    gap: 5px;
     font-size: 12px;
-    height: 40px;
-    flex-wrap: wrap;
-    padding: 4px 8px;
+    height: 50px;
   }
 
   .ad-banner__bg {
-    height: 40px;
+    height: 50px;
   }
 }

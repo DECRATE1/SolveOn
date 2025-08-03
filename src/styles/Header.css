@@ -3,7 +3,7 @@
   margin-bottom: 14px;
 }
 
-@media (min-width: 1024px) and (max-width: 1440px) {
+@media (min-width: 1024px) and (max-width: 1439px) {
   .header {
     margin-bottom: 24px;
   }

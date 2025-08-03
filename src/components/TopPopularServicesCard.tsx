@@ -1,10 +1,18 @@
+import { Services } from "../data/ServicesData";
+import { useCutText } from "../hooks";
 import "../styles/TopPopularServicesCard.css";
-
+interface TopPopularServicesCardProps {
+  lowerHeight: boolean;
+  description: string;
+  src: string;
+  title: string;
+}
 export default function TopPopularServicesCard({
   lowerHeight,
-}: {
-  lowerHeight: boolean;
-}) {
+  description,
+  src,
+  title,
+}: TopPopularServicesCardProps) {
   return (
     <div
       className="service-card"
@@ -14,32 +22,27 @@ export default function TopPopularServicesCard({
       }}
     >
       <div className="servise-card-table">
-        <h3 className="service-card-table__title">Лазерная коррекция зрения</h3>
+        <h3 className="service-card-table__title">{title}</h3>
         <p className="service-card-table__description">
-          После лазерной коррекции зрение становится лучше за счет того, что
-          лазер создает новую форму роговицы — «естественной линзы» нашего
-          глаза, вследствие чего она начинает по-другому преломлять световые
-          лучи, они фокусируются на сетчатке и изображение становится четким.
+          {useCutText(description, 300)}
         </p>
       </div>
-      <h3 className="service-card__title">Лазерная коррекция зрения</h3>
+      <h3 className="service-card__title">{title}</h3>
 
       <div className="servise-card-mobile">
         <div className="service-card-mobile-container">
-          <h3 className="service-card-mobile__title">
-            Лазерная коррекция зрения
-          </h3>
+          <h3 className="service-card-mobile__title">{title}</h3>
 
           <div className="service-card-mobile__image-container">
             <img
               className="service-card__image"
-              src="/slide2.jpg"
+              src={src}
               width={361}
               height={361}
-              alt="Laser eye correction illustration"
             />
             <a href="#" className="service-card__more-link">
               <img
+                loading="lazy"
                 src="/HeroArrow.svg"
                 className="service-card__arrow-icon"
                 alt=""
@@ -51,23 +54,21 @@ export default function TopPopularServicesCard({
         </div>
 
         <p className="service-card-mobile__description">
-          После лазерной коррекции зрение становится лучше за счет того, что
-          лазер создает новую форму роговицы — «естественной линзы» нашего
-          глаза, вследствие чего она начинает по-другому преломлять световые
-          лучи, они фокусируются на сетчатке и изображение становится четким.
+          {useCutText(Services[0].description, 200)}
         </p>
       </div>
 
       <div className="service-card__image-container">
         <img
+          loading="lazy"
           className="service-card__image"
-          src="/slide2.jpg"
+          src={src}
           width={361}
           height={361}
-          alt="Laser eye correction illustration"
         />
         <a href="#" className="service-card__more-link">
           <img
+            loading="lazy"
             src="/HeroArrow.svg"
             className="service-card__arrow-icon"
             alt=""
@@ -77,10 +78,7 @@ export default function TopPopularServicesCard({
         </a>
       </div>
       <p className="service-card__description">
-        После лазерной коррекции зрение становится лучше за счет того, что лазер
-        создает новую форму роговицы — «естественной линзы» нашего глаза,
-        вследствие чего она начинает по-другому преломлять световые лучи, они
-        фокусируются на сетчатке и изображение становится четким.
+        {useCutText(description, 200)}
       </p>
     </div>
   );

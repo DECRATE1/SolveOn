@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
+import { lazy, useEffect, useState } from "react";
 import "../styles/Slider.css";
 import { SliderData } from "../data/SliderData";
-import Slide from "./Slide";
-import SliderDots from "./SliderDots";
+const Slide = lazy(() => import("./Slide"));
+const SliderDots = lazy(() => import("./SliderDots"));
 
 export default function Slider() {
   const [currentSlide, setCurrentSlide] = useState(0);

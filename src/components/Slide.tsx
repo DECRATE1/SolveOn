@@ -33,7 +33,12 @@ export default function Slide({
         className={`slide__link ${!isActive ? "slide__link--hidden" : ""}`}
         href={isActive ? "#" : undefined}
       >
-        <img className="slide__arrow" src="/HeroArrow.svg" alt="Arrow icon" />
+        <img
+          className="slide__arrow"
+          loading="lazy"
+          src="/HeroArrow.svg"
+          alt="Arrow icon"
+        />
         <span className="slide__link-text">Подробнее</span>
       </a>
     </div>

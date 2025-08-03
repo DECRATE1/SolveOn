@@ -1,6 +1,7 @@
+import { lazy } from "react";
 import "../styles/TopPopularServicesBar.css";
-import ReadAboutPopularServise from "./ReadAboutPopularServise";
 
+const ReadAboutPopularServise = lazy(() => import("./ReadAboutPopularServise"));
 interface TopPopularServicesBarProps {
   title: string;
   description: string;
@@ -32,6 +33,7 @@ export default function TopPopularServicesBar({
         <span className="services-bar__number">{index + 1}</span>
         <h4 className="services-bar__title">
           <img
+            loading="lazy"
             src="/slide1.jpg"
             width={92}
             height={92}
