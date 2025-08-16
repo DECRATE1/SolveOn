@@ -37,7 +37,7 @@ export default function TopPopularServicesBar({
         <h4 className="services-bar__title">
           <img
             loading="lazy"
-            src="/slide1.jpg"
+            src="slide1.jpg"
             width={92}
             height={92}
             alt=""

@@ -5,7 +5,7 @@ export default function ProfileBtn() {
     <button type="button" className="profile-btn" aria-label="Личный кабинет">
       <img
         loading="lazy"
-        src="/profile.svg"
+        src="profile.svg"
         width={44}
         height={44}
         className="profile-btn__icon"

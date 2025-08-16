@@ -19,7 +19,7 @@ export default function MobileMenu({
         <p className="mobile-menu-header__text">Центр Лазерной Медицины</p>
         <img
           loading="lazy"
-          src="/vectorized.svg"
+          src="vectorized.svg"
           alt="Закрыть меню"
           className="mobile-menu-icon"
           onClick={() => setMobileMenuIsOpen(false)}

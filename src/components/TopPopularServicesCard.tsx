@@ -53,7 +53,7 @@ export default function TopPopularServicesCard({
             >
               <img
                 loading="lazy"
-                src="/HeroArrow.svg"
+                src="HeroArrow.svg"
                 className="service-card__arrow-icon"
                 alt="Услуги"
                 aria-hidden="true"
@@ -84,7 +84,7 @@ export default function TopPopularServicesCard({
         >
           <img
             loading="lazy"
-            src="/HeroArrow.svg"
+            src="HeroArrow.svg"
             className="service-card__arrow-icon"
             alt="Услуги"
             aria-hidden="true"

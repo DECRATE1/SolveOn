@@ -69,7 +69,7 @@ export default function PopUpAds() {
       >
         <img
           loading="lazy"
-          src="/vectorized.svg"
+          src="vectorized.svg"
           width={64}
           height={64}
           alt="Закрыть"

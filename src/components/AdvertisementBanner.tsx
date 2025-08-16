@@ -31,7 +31,7 @@ export default function AdvertisementBanner() {
             loading="lazy"
             width="32"
             height="32"
-            src="/Group-646.svg"
+            src="Group-646.svg"
             className="ad-banner__icon"
             alt="Стрелка"
           />

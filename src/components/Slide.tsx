@@ -41,7 +41,7 @@ export default function Slide({
         <img
           className="slide__arrow"
           loading="lazy"
-          src="/HeroArrow.svg"
+          src="HeroArrow.svg"
           alt="Arrow icon"
         />
         <span className="slide__link-text">Подробнее</span>
