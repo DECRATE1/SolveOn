@@ -15,7 +15,10 @@ createRoot(document.getElementById("root")!).render(
         <Routes>
           <Route element={<Layout />}>
             <Route path="/" element={<App />} />
-            <Route path="/newPage" element={<SecondPage></SecondPage>}></Route>
+            <Route
+              path="/newPage/:id"
+              element={<SecondPage></SecondPage>}
+            ></Route>
           </Route>
         </Routes>
       </Suspense>

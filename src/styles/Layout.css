@@ -7,13 +7,45 @@
   align-items: center;
   padding-inline: 40px;
   position: relative;
-  overflow: hidden;
 }
 
 .layout__main--blurred {
   pointer-events: none;
   user-select: none;
   filter: blur(1px);
+}
+
+.status-indicator {
+  width: 200px;
+  height: 100px;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 10000;
+  border-radius: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  background-color: rgba(51, 157, 255, 1);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.status-indicator--send {
+  color: white;
+  background-color: rgba(51, 157, 255, 1);
+}
+.status-indicator--error {
+  background-color: red;
+  color: white;
+}
+.status-indicator--success {
+  background-color: green;
+  color: white;
+}
+.status-indicator--idle {
+  opacity: 0;
+  transform: translateY(100%);
 }
 
 .layout__overlay {

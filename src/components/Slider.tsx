@@ -1,6 +1,7 @@
 import { lazy, useEffect, useState } from "react";
 import "../styles/Slider.css";
 import { SliderData } from "../data/SliderData";
+
 const Slide = lazy(() => import("./Slide"));
 const SliderDots = lazy(() => import("./SliderDots"));
 
@@ -8,22 +9,22 @@ export default function Slider() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(
-      () => setCurrentSlide((prev) => (prev + 1) % SliderData.length),
-      5000
-    );
-    return () => clearInterval(interval);
-  }, [currentSlide]);
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % SliderData.length);
+    }, 5000);
 
-  const renderSlide = (slide: (typeof SliderData)[0], index: number) => {
+    return () => clearInterval(interval);
+  }, []);
+
+  const renderSlide = (slide: (typeof SliderData)[number], index: number) => {
     const isActive = index === currentSlide;
     const isPrev = index < currentSlide;
 
     return (
       <Slide
+        key={`${index}-${slide.alt}`}
         src={slide.src}
         alt={slide.alt}
-        key={`${index}-${slide.alt}`}
         transform={isActive ? 0 : 100}
         sign={isActive || isPrev ? "-" : "+"}
         slideToShowLink={isActive ? 1 : undefined}

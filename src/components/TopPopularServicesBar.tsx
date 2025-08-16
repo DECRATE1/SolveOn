@@ -2,6 +2,7 @@ import { lazy } from "react";
 import "../styles/TopPopularServicesBar.css";
 
 const ReadAboutPopularServise = lazy(() => import("./ReadAboutPopularServise"));
+
 interface TopPopularServicesBarProps {
   title: string;
   description: string;
@@ -20,14 +21,16 @@ export default function TopPopularServicesBar({
   itemOpen,
   setItemOpen,
 }: TopPopularServicesBarProps) {
+  const isCollapsed = lowerHeight && itemOpen === index;
+
   return (
     <>
       <span className="services-bar__line"></span>
       <div
         className="services-bar"
         style={{
-          transform: lowerHeight && itemOpen === index ? "scaleY(0)" : "",
-          height: lowerHeight && itemOpen === index ? "0" : "",
+          transform: isCollapsed ? "scaleY(0)" : undefined,
+          height: isCollapsed ? "0" : undefined,
         }}
       >
         <span className="services-bar__number">{index + 1}</span>

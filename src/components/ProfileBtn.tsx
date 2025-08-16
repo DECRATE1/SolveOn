@@ -2,15 +2,15 @@ import "../styles/ProfileBtn.css";
 
 export default function ProfileBtn() {
   return (
-    <div className="profile-btn">
+    <button type="button" className="profile-btn" aria-label="Личный кабинет">
       <img
         loading="lazy"
         src="/profile.svg"
         width={44}
         height={44}
         className="profile-btn__icon"
-        alt="Profile icon"
+        alt=""
       />
-    </div>
+    </button>
   );
 }

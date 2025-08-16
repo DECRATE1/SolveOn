@@ -4,7 +4,7 @@ export const Services: {
   description: string;
 }[] = [];
 
-for (let i = 0; i < 4; i++) {
+for (let i = 0; i < 10; i++) {
   const service = {
     title: "Лазерная коррекция зрения",
     src: "/slide1.jpg",

@@ -10,7 +10,7 @@ export default function Title() {
       <img
         className="title__icon"
         src="/eye.svg"
-        alt="Eye icon"
+        alt="Иконка глаза"
         loading="lazy"
       />
     </div>

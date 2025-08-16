@@ -1,19 +1,24 @@
-export default function Slide({
-  src,
-  transform,
-  sign,
-  slideToShowLink,
-  index,
-  alt,
-}: {
+import HandlerLink from "./HanldlerLink";
+
+interface SlideProps {
   src: string;
   alt: string;
   transform: number;
   sign: string;
   slideToShowLink?: number;
   index: number;
-}) {
-  const isActive = slideToShowLink! - 1 === index;
+}
+
+export default function Slide({
+  src,
+  alt,
+  transform,
+  sign,
+  slideToShowLink,
+  index,
+}: SlideProps) {
+  const isActive =
+    slideToShowLink !== undefined && slideToShowLink - 1 === index;
 
   return (
     <div
@@ -27,11 +32,11 @@ export default function Slide({
         className="slide__image"
         style={{ backgroundImage: `url(/${src})` }}
         aria-label={alt}
-      ></div>
+      />
 
-      <a
-        className={`slide__link ${!isActive ? "slide__link--hidden" : ""}`}
-        href={isActive ? "#" : undefined}
+      <HandlerLink
+        className={`slide__link ${isActive ? "" : "slide__link--hidden"}`}
+        to={isActive ? "#" : ""}
       >
         <img
           className="slide__arrow"
@@ -40,7 +45,7 @@ export default function Slide({
           alt="Arrow icon"
         />
         <span className="slide__link-text">Подробнее</span>
-      </a>
+      </HandlerLink>
     </div>
   );
 }

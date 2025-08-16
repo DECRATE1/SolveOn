@@ -1,30 +1,30 @@
 export const ExtraList: { text: string; href: string }[] = [
   {
     text: "о клинике",
-    href: "#",
+    href: "/newPage/2",
   },
   {
     text: "документы",
-    href: "#",
+    href: "/newPage/3",
   },
   {
     text: "вакансии",
-    href: "#",
+    href: "/newPage/4",
   },
   {
     text: "вопросы врачам",
-    href: "#",
+    href: "/newPage/5",
   },
   {
     text: "новости",
-    href: "#",
+    href: "/newPage/6",
   },
   {
     text: "справочник болезней",
-    href: "#",
+    href: "/newPage/7",
   },
   {
     text: "сотрудничество",
-    href: "#",
+    href: "/newPage/8",
   },
 ];

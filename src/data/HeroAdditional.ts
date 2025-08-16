@@ -1,4 +1,4 @@
-export const HeroAdditional: { text: string; href: "#" }[] = [
-  { text: "Вопросы", href: "#" },
-  { text: "Больше акций", href: "#" },
+export const HeroAdditional: { text: string; href: string }[] = [
+  { text: "Вопросы", href: "/newPage/15" },
+  { text: "Больше акций", href: "/newPage/16" },
 ];

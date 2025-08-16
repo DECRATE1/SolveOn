@@ -1,8 +1,15 @@
 import { useEffect, useState } from "react";
 import "../styles/Timer.css";
 
+interface TimeLeft {
+  days: number;
+  hours: number;
+  minutes: number;
+  seconds: number;
+}
+
 export default function Timer() {
-  const [timeLeft, setTimeLeft] = useState({
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 3,
     hours: 0,
     minutes: 0,
@@ -12,38 +19,25 @@ export default function Timer() {
   useEffect(() => {
     const timer = setInterval(() => {
       setTimeLeft((prev) => {
-        if (prev.seconds > 0) {
-          return { ...prev, seconds: prev.seconds - 1 };
+        const totalSeconds =
+          prev.days * 86400 +
+          prev.hours * 3600 +
+          prev.minutes * 60 +
+          prev.seconds;
+
+        if (totalSeconds <= 0) {
+          clearInterval(timer);
+          return prev;
         }
 
-        if (prev.minutes > 0) {
-          return {
-            ...prev,
-            minutes: prev.minutes - 1,
-            seconds: 59,
-          };
-        }
+        const newTotal = totalSeconds - 1;
 
-        if (prev.hours > 0) {
-          return {
-            ...prev,
-            hours: prev.hours - 1,
-            minutes: 59,
-            seconds: 59,
-          };
-        }
-
-        if (prev.days > 0) {
-          return {
-            days: prev.days - 1,
-            hours: 23,
-            minutes: 59,
-            seconds: 59,
-          };
-        }
-
-        clearInterval(timer);
-        return prev;
+        return {
+          days: Math.floor(newTotal / 86400),
+          hours: Math.floor((newTotal % 86400) / 3600),
+          minutes: Math.floor((newTotal % 3600) / 60),
+          seconds: newTotal % 60,
+        };
       });
     }, 1000);
 

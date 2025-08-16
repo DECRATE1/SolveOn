@@ -1,8 +1,9 @@
 import "../styles/MoreServicesBtn.css";
+import HandlerLink from "./HanldlerLink";
 
 export default function MoreServicesBtn() {
   return (
-    <a className="more-services-btn" href="#">
+    <HandlerLink className="more-services-btn" to="#">
       <span className="more-services-btn__text">Больше услуг</span>
       <span className="more-services-btn__arrow">
         <img
@@ -10,10 +11,11 @@ export default function MoreServicesBtn() {
           src="/HeroArrow.svg"
           width={14}
           height={14}
-          alt="Arrow"
+          alt=""
+          aria-hidden="true"
           className="more-services-btn__arrow-icon"
         />
       </span>
-    </a>
+    </HandlerLink>
   );
 }

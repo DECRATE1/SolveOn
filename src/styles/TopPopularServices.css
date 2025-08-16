@@ -3,12 +3,23 @@
   height: auto;
   margin-bottom: 82px;
   position: relative;
+  overflow-x: hidden;
+}
+
+.popular-services__btn {
+  display: flex;
+  user-select: none;
+  text-align: center;
+  justify-content: center;
+  margin-top: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
 }
 
 @media (min-width: 1024px) and (max-width: 1439px) {
   .popular-services {
     margin-bottom: 64px;
-    width: 110%;
+    width: 100vw;
   }
 }
 
@@ -16,7 +27,7 @@
   .popular-services {
     margin-bottom: 56px;
     padding: 0 16px;
-    width: 110%;
+    width: 100vw;
   }
 }
 
@@ -24,14 +35,14 @@
   .popular-services {
     margin-bottom: 56px;
     padding: 0 16px;
-    width: 110%;
+    width: 100vw;
   }
 }
 
 @media (min-width: 320px) and (max-width: 575px) {
   .popular-services {
     margin-bottom: 56px;
-    width: 110%;
+    width: 100vw;
   }
 }
 

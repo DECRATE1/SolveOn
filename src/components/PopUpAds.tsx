@@ -5,54 +5,58 @@ import { closePopUp } from "../store/PopUpSlice";
 import RegisterMeetBtn from "./RegisterMeetBtn";
 import { useForm } from "react-hook-form";
 import { useEffect, useState } from "react";
+import { setState } from "../store/FetchSlice";
+import HandlerLink from "./HanldlerLink";
+
+interface SubmitData {
+  phone: string;
+  name: string;
+  consent: boolean;
+}
 
 export default function PopUpAds() {
-  const [placeholderPhone, setPlaceholderPhone] = useState("Телефон");
-  const [placeholderName, setPlaceholderName] = useState("Имя");
-
-  interface SubmitData {
-    phone: string;
-    name: string;
-  }
+  const dispatch = useDispatch();
+  const { isOpen } = useSelector((state: RootState) => state.popup);
+  const [phoneValue, setPhoneValue] = useState("");
+  const [nameValue, setNameValue] = useState("");
+  const [className, setClassName] = useState("");
   const {
     register,
     handleSubmit,
     formState: { errors },
-    reset,
+    setValue,
+    clearErrors,
   } = useForm<SubmitData>();
 
   useEffect(() => {
-    if (errors.phone) {
-      setPlaceholderPhone(errors.phone!.message!);
+    if (isOpen) {
+      clearErrors();
+      setValue("name", "");
+      setValue("phone", "");
     }
-  }, [errors.phone]);
-
-  useEffect(() => {
-    if (errors.name) {
-      setPlaceholderName(errors.name!.message!);
-    }
-  }, [errors.name]);
+  }, [isOpen]);
 
   const onSubmit = async (data: SubmitData) => {
-    console.log(data);
     try {
+      dispatch(setState("send"));
+      setClassName("--active");
       const response = await fetch("http://localhost:3000/api/form/postForm", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
 
-      if (!response.ok) {
-        throw new Error("Ошибка отправки");
-      }
+      if (!response.ok) throw new Error("Ошибка отправки");
+
+      dispatch(setState("success"));
+      setTimeout(() => dispatch(setState("idle")), 2000);
     } catch (err) {
-      console.error("Ошибка: ", err);
+      console.error("Ошибка:", err);
+      dispatch(setState("error"));
+      setTimeout(() => dispatch(setState("idle")), 2000);
     }
+    setClassName("");
   };
-  const { isOpen } = useSelector((state: RootState) => state.popup);
-  const dispatch = useDispatch();
 
   if (!isOpen) return null;
 
@@ -61,14 +65,14 @@ export default function PopUpAds() {
       <button
         className="popup__close-btn"
         onClick={() => dispatch(closePopUp())}
-        aria-label="Close popup"
+        aria-label="Закрыть"
       >
         <img
           loading="lazy"
           src="/vectorized.svg"
           width={64}
           height={64}
-          alt="Close icon"
+          alt="Закрыть"
           className="popup__close-icon"
         />
       </button>
@@ -83,7 +87,18 @@ export default function PopUpAds() {
         </h5>
       </div>
 
-      <form className="popup__form" onSubmit={handleSubmit(onSubmit)}>
+      <form
+        className="popup__form"
+        onSubmit={handleSubmit(onSubmit, () => {
+          if (errors.phone) {
+            setPhoneValue("");
+          }
+
+          if (errors.name) {
+            setNameValue("");
+          }
+        })}
+      >
         <div className="popup__input-group">
           <div className="input-item">
             <input
@@ -95,7 +110,9 @@ export default function PopUpAds() {
                   message: "Неверный формат телефона",
                 },
               })}
-              placeholder={placeholderPhone}
+              value={phoneValue}
+              onChange={(e) => setPhoneValue(e.target.value)}
+              placeholder={errors.phone?.message || "Телефон"}
               className="popup__input"
             />
           </div>
@@ -104,7 +121,9 @@ export default function PopUpAds() {
             <input
               type="text"
               {...register("name", { required: "Имя обязательно" })}
-              placeholder={placeholderName}
+              placeholder={errors.name?.message || "Имя"}
+              value={nameValue}
+              onChange={(e) => setNameValue(e.target.value)}
               className="popup__input"
             />
           </div>
@@ -112,17 +131,24 @@ export default function PopUpAds() {
 
         <div className="popup__privacy">
           <label className="popup__privacy-label">
-            <input type="checkbox" className="popup__checkbox" />
+            <input
+              type="checkbox"
+              {...register("consent", { required: "Необходимо согласие" })}
+              className="popup__checkbox"
+            />
             <span className="popup__privacy-text">
               Я даю согласие на обработку{" "}
-              <a href="#" className="popup__privacy-a">
+              <HandlerLink to="#" className="popup__privacy-Link">
                 персональных данных
-              </a>
+              </HandlerLink>
             </span>
           </label>
+          {errors.consent && (
+            <p className="popup__error">{errors.consent.message}</p>
+          )}
         </div>
         <div className="register__btn">
-          <RegisterMeetBtn onClick={() => console.log(1)}></RegisterMeetBtn>
+          <RegisterMeetBtn className={className}></RegisterMeetBtn>{" "}
         </div>
       </form>
     </div>

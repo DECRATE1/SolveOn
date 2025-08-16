@@ -1,5 +1,6 @@
-import { lazy } from "react";
+import { lazy, Suspense } from "react";
 import "../styles/Services.css";
+
 const MoreServicesBtn = lazy(() => import("./MoreServicesBtn"));
 
 export default function Services() {
@@ -10,7 +11,10 @@ export default function Services() {
         <span className="services-mobile__title">НАШИ УСЛУГИ</span>
         <span className="services__title">ПОПУЛЯРНЫЕ УСЛУГИ</span>
       </div>
-      <MoreServicesBtn />
+
+      <Suspense fallback={<div>Загрузка...</div>}>
+        <MoreServicesBtn />
+      </Suspense>
     </section>
   );
 }

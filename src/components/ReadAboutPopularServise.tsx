@@ -15,10 +15,15 @@ export default function ReadAboutPopularServise({
   };
 
   return (
-    <div className="expand-btn" onClick={handleClick}>
+    <button
+      type="button"
+      className="expand-btn"
+      onClick={handleClick}
+      aria-label="Подробнее о сервисе"
+    >
       <span className="expand-btn__dot"></span>
       <span className="expand-btn__dot"></span>
       <span className="expand-btn__dot"></span>
-    </div>
+    </button>
   );
 }

@@ -1,5 +1,4 @@
 import { lazy, useState } from "react";
-
 import "../styles/TopPopularServiceItem.css";
 import TopPopularServicesCard from "./TopPopularServicesCard";
 
@@ -24,6 +23,8 @@ export default function TopPopularServiceItem({
 }: TopPopularServiceItemProps) {
   const [lowerHeight, setLowerHeight] = useState(false);
 
+  const isExpanded = lowerHeight && itemOpen === index;
+
   return (
     <div className="popular-service-item">
       <TopPopularServicesBar
@@ -35,11 +36,13 @@ export default function TopPopularServiceItem({
         setItemOpen={setItemOpen}
         itemOpen={itemOpen}
       />
-      {lowerHeight && itemOpen === index && (
+
+      {isExpanded && (
         <TopPopularServicesCard
           lowerHeight={lowerHeight}
           description={description}
           src={src}
+          index={index}
           title={title}
         />
       )}

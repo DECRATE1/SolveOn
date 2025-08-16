@@ -1,26 +1,28 @@
 import { SliderData } from "../data/SliderData";
 
+interface SliderDotsProps {
+  indexOfActiveSlide: number;
+  setCurrSlide: (val: number) => void;
+}
+
 export default function SliderDots({
   indexOfActiveSlide,
   setCurrSlide,
-}: {
-  indexOfActiveSlide: number;
-  setCurrSlide: (val: number) => void;
-}) {
+}: SliderDotsProps) {
   return (
     <div className="slider__dots">
       {SliderData.map((_, index) => {
+        const isActive = indexOfActiveSlide === index;
+
         return (
           <span
-            className="slider__dots-dot"
             key={index}
+            className="slider__dots-dot"
             style={{
               borderRadius: "60px",
               border: "1px solid",
               borderColor: "black",
-
-              backgroundColor:
-                indexOfActiveSlide === index ? "black" : "inherit",
+              backgroundColor: isActive ? "black" : "inherit",
             }}
             onClick={() => setCurrSlide(index)}
           ></span>
