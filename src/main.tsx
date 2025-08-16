@@ -10,7 +10,7 @@ import { Suspense } from "react";
 
 createRoot(document.getElementById("root")!).render(
   <Provider store={store}>
-    <BrowserRouter>
+    <BrowserRouter basename="/SolveOn">
       <Suspense fallback={<div>loading...</div>}>
         <Routes>
           <Route element={<Layout />}>
